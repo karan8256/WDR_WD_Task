@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundAMP - All Event</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .navbar {
+            height: 55px;
+            background-color: #171717;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 11px;
+        }
+
+        .download-btn {
+            background-color: #75b8f5;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 18px;
+            font-size: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .main-section {
+            background-color: #414141;
+            padding: 10px 0 15px;
+        }
+
+        .container {
+            width: 84%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .banner {
+            height: 150px;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.15),
+                    rgba(0, 0, 0, 0.15)
+                ),
+                url("https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1400&q=80");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .banner h1 {
+            color: white;
+            font-size: 28px;
+            font-style: italic;
+            font-weight: 1200;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .event-card {
+            background-color: white;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 125px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .event-content {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .date {
+            color: #777;
+            font-size: 9px;
+            margin-bottom: 8px;
+        }
+
+        .event-content h2 {
+            color: #222;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            color: #999;
+            font-size: 9px;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #777;
+            font-size: 10px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .see-more {
+            background-color: #75b8f5;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 10px;
+            cursor: pointer;
+            align-self: center;
+            margin-top: auto;
+        }
+
+        .see-more:hover,
+        .download-btn:hover {
+            background-color: #4297e5;
+        }
+
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .event-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .banner h1 {
+                font-size: 23px;
+            }
+        }
+
+       
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0 12px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .nav-links a {
+                display: none;
+            }
+
+            .download-btn {
+                padding: 9px 12px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .banner {
+                height: 100px;
+                margin-bottom: 20px;
+            }
+
+            .banner h1 {
+                font-size: 21px;
+            }
+
+            .event-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .event-card img {
+                height: 110px;
+            }
+
+            .event-content {
+                padding: 8px;
+            }
+
+            .event-content h2 {
+                font-size: 13px;
+            }
+
+            .description {
+                font-size: 10px;
+            }
+
+            .see-more {
+                padding: 7px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>🎸</span>SoundAMP
+        </div>
+
+        <nav class="nav-links">
+            <a href="#">HTML Templates ▾</a>
+            <a href="#">More HTML Templates ▾</a>
+            <button class="download-btn">DOWNLOAD NOW</button>
+        </nav>
+
+    </header>
+
+    <main class="main-section">
+
+        <div class="container">
+
+          
+            <section class="banner">
+                <h1>ALL EVENT</h1>
+            </section>
+
+            <section class="event-grid">
+
+               
+                <article class="event-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=80"
+                        alt="Night Laser Show">
+
+                    <div class="event-content">
+                        <p class="date">10/05/2018</p>
+
+                        <h2>Night Laser Show</h2>
+
+                        <p class="tag">#hip-hop #rnb #dance</p>
+
+                        <p class="description">
+                            We are happy to announce this special laser show.
+                        </p>
+
+                        <button class="see-more">See more...</button>
+                    </div>
+
+                </article>
+
+                
+                <article class="event-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=600&q=80"
+                        alt="Live Music">
+
+                    <div class="event-content">
+                        <p class="date">14/05/2018</p>
+
+                        <h2>Live Music</h2>
+
+                        <p class="tag">#live #rock #alternative</p>
+
+                        <p class="description">
+                            Special event for our rock fans! Live music show.
+                        </p>
+
+                        <button class="see-more">See more...</button>
+                    </div>
+
+                </article>
+
+                
+                <article class="event-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=600&q=80"
+                        alt="DJ Master Class">
+
+                    <div class="event-content">
+                        <p class="date">12/04/2018</p>
+
+                        <h2>DJ - Master Class</h2>
+
+                        <p class="tag">#dj #master-class</p>
+
+                        <p class="description">
+                            DJ Woodsmell will teach you new tricks. Please sign up.
+                        </p>
+
+                        <button class="see-more">See more...</button>
+                    </div>
+
+                </article>
+
+                
+                <article class="event-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80"
+                        alt="Best Night Party">
+
+                    <div class="event-content">
+                        <p class="date">30/04/2018</p>
+
+                        <h2>Best Night Party</h2>
+
+                        <p class="tag">#party #club</p>
+
+                        <p class="description">
+                            Our traditional event: best hits all night long.
+                        </p>
+
+                        <button class="see-more">See more...</button>
+                    </div>
+
+                </article>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
